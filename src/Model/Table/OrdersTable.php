@@ -14,8 +14,6 @@ class OrdersTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            //->notEmpty('user_id')
-            //->requirePresence('user_id')
             ->notEmpty('size')
             ->requirePresence('size');
 

@@ -21,6 +21,11 @@ class OrdersController extends AppController
         $this->set(compact('orders'));
     }
 
+    public function viewAll()
+    {
+        $this->set('orders', $this->Orders->find('all'));
+    }
+
     public function add()
     {
         $order = $this->Orders->newEntity();
@@ -52,7 +57,7 @@ class OrdersController extends AppController
 	    $this->set('order', $order);
 	}
 
-    public function move($id = null)
+    public function complete($id = null)
     {
         $order = $this->Orders->get($id);
         $order->status = "Past";
